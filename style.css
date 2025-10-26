@@ -1,0 +1,81 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* Form Styles */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Blockchain Ledger Styles */
+.block {
+    max-width: 800px;
+    background-color: #fff;
+    margin: 15px auto;
+    padding: 15px 20px;
+    border-left: 6px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.block strong {
+    color: #2c3e50;
+}
+
+.block ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.block li {
+    background-color: #ecf0f1;
+    margin: 5px 0;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+/* Footer Space */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #7f8c8d;
+}

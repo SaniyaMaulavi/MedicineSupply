@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Medicine Supply Chain</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Medicine Supply Chain Blockchain</h1>
+    </header>
+
+    <section class="form-section">
+      <h2>Add Medicine Transaction</h2>
+      <form action="/add_transaction" method="post">
+        <input
+          type="text"
+          name="medicine_name"
+          placeholder="Medicine Name"
+          required
+        />
+        <input type="number" name="quantity" placeholder="Quantity" required />
+        <input
+          type="text"
+          name="from_entity"
+          placeholder="From (Entity)"
+          required
+        />
+        <input
+          type="text"
+          name="to_entity"
+          placeholder="To (Entity)"
+          required
+        />
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="ledger-section">
+      <h2>Blockchain Ledger</h2>
+      {% for block in chain %}
+      <div class="block">
+        <strong>Block #{{ block['index'] }}</strong><br />
+        Timestamp: {{ block['timestamp'] }}<br />
+        Proof: {{ block['proof'] }}<br />
+        Previous Hash: {{ block['previous_hash'] }}<br />
+        <strong>Transactions:</strong>
+        <ul>
+          {% for tx in block['transactions'] %}
+          <li>
+            {{ tx['medicine_name'] }} | Quantity: {{ tx['quantity'] }} | From:
+            {{ tx['from'] }} | To: {{ tx['to'] }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+
+    <footer>&copy; 2025 Medicine Supply Chain Blockchain</footer>
+  </body>
+</html>
